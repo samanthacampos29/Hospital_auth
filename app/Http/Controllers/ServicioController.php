@@ -24,7 +24,9 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        return view('servicio.insert');
+        $hospitals = App\Hospital::orderby('nombre','asc')->get();
+        $laboratorios = App\Laboratorio::orderby('nombre','asc')->get();
+        return view('servicio.insert', compact('hospitals','laboratorios'));
     }
 
     /**

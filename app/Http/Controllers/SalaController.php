@@ -24,7 +24,9 @@ class SalaController extends Controller
      */
     public function create()
     {
-        return view('sala.insert');
+        $hospitals = App\Hospital::orderby('nombre','asc')->get();
+        $pacientes = App\Paciente::orderby('nombre','asc')->get();
+        return view('sala.insert', compact('hospitals','pacientes'));
     }
 
     /**

@@ -24,7 +24,8 @@ class DiagnosticoController extends Controller
      */
     public function create()
     {
-        return view('diagnostico.insert');
+        $pacientes = App\Paciente::orderby('nombre','asc')->get();
+        return view('diagnostico.insert', compact('pacientes'));
     }
 
     /**

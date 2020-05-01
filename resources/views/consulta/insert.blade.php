@@ -28,18 +28,31 @@ Crear nuevo consulta
         <input type="text" class="form-control" name="fecha" placeholder="Fecha">
         </div>
     </div>
-        <div class="form-row">
-        <div class="form-group col-md-6">
-        <label>ID Paciente:</label>
-        <input type="number" class="form-control" name="idpaciente" placeholder="0">
-        </div>
-    </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label>ID Medico:</label>
-        <input type="number" class="form-control" name="idmedico" placeholder="0">
+            <label>Medico: </label>
+            <select name="idMedico"  class="form-control">
+                @foreach ($medicos as $medico)
+            <option value="{{$medico->id}}" >{{$medico->nombre}}</option>
+                    
+                @endforeach
+            </select>
+            
         </div>
     </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Paciente: </label>
+            <select name="idPaciente"  class="form-control">
+                @foreach ($pacientes as $paciente)
+            <option value="{{$paciente->id}}" >{{$paciente->nombre}}</option>
+                @endforeach
+            </select>
+            
+        </div>
+    </div>
+
     <div class="form-row">
         <button type="submit" class="btn btn-primary">Crear Consulta</button>
     </div>

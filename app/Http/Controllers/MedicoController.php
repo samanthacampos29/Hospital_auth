@@ -24,7 +24,8 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        return view('medico.insert');
+        $hospitals = App\Hospital::orderby('nombre','asc')->get();
+        return view('medico.insert', compact('hospitals'));
     }
 
     /**

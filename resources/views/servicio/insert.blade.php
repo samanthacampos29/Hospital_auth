@@ -36,14 +36,26 @@ Crear nuevo servicio
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label>ID Hospital:</label>
-        <input type="number" class="form-control" name="idhospital" placeholder="0">
+            <label>Hospital: </label>
+            <select name="idHospital"  class="form-control">
+                @foreach ($hospitals as $hospital)
+            <option value="{{$hospital->id}}" >{{$hospital->nombre}}</option>
+                    
+                @endforeach
+            </select>
+            
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label>ID Laboratorio:</label>
-        <input type="number" class="form-control" name="idlaboratorio" placeholder="0">
+            <label>Laboratorio: </label>
+            <select name="idLaboratorio"  class="form-control">
+                @foreach ($laboratorios as $laboratorio)
+            <option value="{{$laboratorio->id}}" >{{$laboratorio->nombre}}</option>
+                    
+                @endforeach
+            </select>
+            
         </div>
     </div>
     <div class="form-row">

@@ -24,7 +24,9 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        return view('consulta.insert');
+        $medicos = App\Medico::orderby('nombre','asc')->get();
+        $pacientes = App\Paciente::orderby('nombre','asc')->get();
+        return view('consulta.insert', compact('medicos','pacientes'));
     }
 
     /**

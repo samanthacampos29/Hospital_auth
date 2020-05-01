@@ -37,10 +37,16 @@ Crear nuevo diagnostico
     
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label>ID Paciente:</label>
-        <input type="number" class="form-control" name="idpaciente" placeholder="0">
+            <label>Paciente: </label>
+            <select name="idPaciente"  class="form-control">
+                @foreach ($pacientes as $paciente)
+            <option value="{{$paciente->id}}" >{{$paciente->nombre}}</option>
+                @endforeach
+            </select>
+            
         </div>
     </div>
+    
     <div class="form-row">
         <button type="submit" class="btn btn-primary">Crear Diagnostico</button>
     </div>
